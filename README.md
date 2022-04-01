@@ -32,7 +32,6 @@ yarn add @walletconnect/web3-provider-npm
 2. Then, you'll need to open up a second terminal and run:
 
 ```
-cd https://github.com/xaneeshax/neu_lionhack/hardhat-simple-storage
 cd hardhat-simple-storage
 yarn hardhat node
 ```
