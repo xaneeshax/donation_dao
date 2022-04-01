@@ -1,21 +1,20 @@
 # nextjs-ethers-metamask-connect
 
-
 ## Requirements
 
-- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
-- [Nodejs & npm](https://nodejs.org/en/)
-  - You'll know you've installed nodejs right if you can run:
-    - `node --version` And get an ouput like: `vx.x.x`
-  - You'll know you've installed npx right if you can run:
-    - `npm --version` And get an ouput like: `x.x.x`
-- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
-  - You'll know you've installed yarn right if you can run:
-    - `yarn --version` And get an output like: `x.x.x`
-    - You might need to install it with npm
-- [Metamask](https://metamask.io/)
-  - This is a browser extension that lets you interact with the blockchain.
+-   [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+    -   You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+-   [Nodejs & npm](https://nodejs.org/en/)
+    -   You'll know you've installed nodejs right if you can run:
+        -   `node --version` And get an ouput like: `vx.x.x`
+    -   You'll know you've installed npx right if you can run:
+        -   `npm --version` And get an ouput like: `x.x.x`
+-   [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
+    -   You'll know you've installed yarn right if you can run:
+        -   `yarn --version` And get an output like: `x.x.x`
+        -   You might need to install it with npm
+-   [Metamask](https://metamask.io/)
+    -   This is a browser extension that lets you interact with the blockchain.
 
 ## Quickstart
 
