@@ -1,6 +1,14 @@
 import styles from "../styles/Home.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Web3Modal from "web3modal";
 import { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Form from "react-bootstrap/Form";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { abi } from "../constants/abi";
@@ -99,45 +107,67 @@ export default function Home() {
     }
 
     return (
-        <div className="mid">
+        <div>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#dashboard">Dashboard</Nav.Link>
+                        <Nav.Link href="#org-spending">Org Spending</Nav.Link>
+                        <Nav.Link href="#your-donations">
+                            Your Donations
+                        </Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
             {hasMetamask ? (
-                isConnected ? (
-                    <p className="mid">Connected!</p>
-                ) : (
-                    <button className="mid" onClick={() => connect()}>
-                        Connect
-                    </button>
-                )
+                <Container>
+                    {isConnected ? (
+                        <p>Connected!</p>
+                    ) : (
+                        <Button onClick={() => connect()}>Connect</Button>
+                    )}
+                </Container>
             ) : (
                 "Please install metamask"
             )}
             {isConnected ? (
-                <div className="mid">
-                    <form>
-                        <label>
-                            Enter Your Favorite Number:
-                            <input
+                <Container>
+                    <Form>
+                        <Form.Select aria-label="Organization Selector">
+                            <option>
+                                Which organization would you like to donate to?
+                            </option>
+                            <option value="1">Org 1</option>
+                            <option value="2">Org 2</option>
+                            <option value="3">Org 3</option>
+                        </Form.Select>
+                        <Form.Group
+                            className="mb-3"
+                            controlId="ETH-donation-amount"
+                        >
+                            <Form.Label>
+                                How much ETH would you like to donate?
+                            </Form.Label>
+                            <Form.Control
                                 type="text"
+                                placeholder="ETH amount"
                                 onChange={(e) => setStoredVal(e.target.value)}
                             />
-                        </label>
-                    </form>
-                    <button className="mid" onClick={() => execute()}>
-                        Execute
-                    </button>
-                </div>
+                        </Form.Group>
+                        <Button onClick={() => execute()}>Execute</Button>
+                        {executed ? (
+                            <Button onClick={() => showStored()}>
+                                My Value
+                            </Button>
+                        ) : (
+                            <></>
+                        )}
+                    </Form>
+                </Container>
             ) : (
-                ""
-            )}
-
-            {executed ? (
-                <div>
-                    <button className="mid" onClick={() => showStored()}>
-                        My Value
-                    </button>
-                </div>
-            ) : (
-                ""
+                <></>
             )}
         </div>
     );
