@@ -25,6 +25,8 @@
 git clone https://github.com/xaneeshax/neu_lionhack
 cd neu_lionhack
 yarn
+yarn web3Modal
+yarn add @walletconnect/web3-provider-npm
 ```
 
 2. Then, you'll need to open up a second terminal and run:
