@@ -1,23 +1,5 @@
 # nextjs-ethers-metamask-connect
 
-This is a minimalistic project to show us how we can connect to metamask using ethersjs in nextjs / react.
-
-This could just as easily be done in typescript.
-
-This project started with nexjs boilerplate by running `yarn create next-app nextjs-ethers-metamask-connect`
-
-Video Coming soon...
-
-- [nextjs-ethers-metamask-connect](#nextjs-ethers-metamask-connect)
-- [Getting Started](#getting-started)
-  - [Requirements](#requirements)
-  - [Quickstart](#quickstart)
-    - [Important localhost note](#important-localhost-note)
-- [Thank you!](#thank-you)
-
-Video coming soon...
-
-# Getting Started
 
 ## Requirements
 
@@ -40,25 +22,22 @@ Video coming soon...
 1. Clone and install dependencies
 
 ```
-git clone https://github.com/PatrickAlphaC/nextjs-ethers-metamask-connect
-cd nextjs-ethers-metamask-connect
+git clone https://github.com/xaneeshax/neu_lionhack
+cd neu_lionhack
 yarn
 ```
 
 2. Then, you'll need to open up a second terminal and run:
 
 ```
-git clone https://github.com/PatrickAlphaC/hardhat-simple-storage
-cd hardhat-simple-storage
+git clone https://github.com/xaneeshax/neu_lionhack
+cd neu_lionhack
 yarn hardhat node
 ```
 
 This will deploy a sample contract and start a local hardhat blockchain.
 
 3. Connect your [metamask](https://metamask.io/) to your local hardhat blockchain.
-
-> **PLEASE USE A METAMASK ACCOUNT THAT ISNT ASSOCIATED WITH ANY REAL MONEY.**
-> I usually use a few different browser profiles to separate my metamasks easily.
 
 In the output of the above command, take one of the private key accounts and [import it into your metamask.](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account)
 
@@ -82,11 +61,3 @@ If you use metamask with a local network, everytime you shut down your node, you
 
 # Thank you!
 
-If you appreciated this, feel free to follow me or donate!
-
-ETH/Polygon/Avalanche/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
-
-[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
-[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
-[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
-[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)
