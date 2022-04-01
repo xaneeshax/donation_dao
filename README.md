@@ -25,7 +25,7 @@
 git clone https://github.com/xaneeshax/neu_lionhack
 cd neu_lionhack
 yarn
-yarn web3Modal
+yarn web3modal
 yarn add @walletconnect/web3-provider-npm
 ```
 
