@@ -24,14 +24,13 @@
 git clone https://github.com/xaneeshax/neu_lionhack
 cd neu_lionhack
 yarn
-yarn web3Modal
-yarn add @walletconnect/web3-provider-npm
-```
-
-2. Then, you'll need to open up a second terminal and run:
-
-```
 cd hardhat-simple-storage
+yarn
+```
+
+2. Then, you can run:
+
+```
 yarn hardhat node
 ```
 
@@ -60,4 +59,3 @@ You'll be brought to the UI after running `yarn dev` which has exactly 2 buttons
 If you use metamask with a local network, everytime you shut down your node, you'll need to reset your account. Settings -> Advanced -> Reset account. Don't do this with a metamask you have real funds in.
 
 # Thank you!
-
