@@ -76,7 +76,6 @@ export default function Home() {
     // Transfers the given amount of Ether to the selected organization
     async function execute() {
         if (typeof window.ethereum !== "undefined") {
-
             const signerAddress = signer.getAddress();
 
             const transaction = {
@@ -85,19 +84,22 @@ export default function Home() {
                 value: ethers.utils.parseEther(storedVal),
                 nonce: provider.getTransactionCount(signerAddress, "latest"),
                 gasLimit: ethers.utils.hexlify(3000000),
-                gasPrice: provider.getGasPrice()
-            }
+                gasPrice: provider.getGasPrice(),
+            };
 
-            signer.sendTransaction(transaction).then((transaction) => {
-                console.log(transaction)
-                alert("Send finished!")
-              }).catch((err) => {console.log(err)})
-            
+            signer
+                .sendTransaction(transaction)
+                .then((transaction) => {
+                    console.log(transaction);
+                    alert("Send finished!");
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         } else {
             console.log("Please install MetaMask");
         }
     }
-
 
     return (
         <div>
