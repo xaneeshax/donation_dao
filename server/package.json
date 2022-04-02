@@ -1,0 +1,23 @@
+{
+  "name": "lionhack",
+  "version": "1.0.0",
+  "description": "An app for lionhack implementation",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "startn": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prasad Pathak",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
+    "etherscan-api": "^10.0.5",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "requests": "^0.3.0"
+  }
+}
