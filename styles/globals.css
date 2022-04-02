@@ -1,0 +1,95 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1e70f4;
+    border: none;
+    color: white;
+    padding: 16px 48px;
+    text-align: center;
+    font-size: 16px; 
+    margin: 8px 4px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: flex; 
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+input {
+    margin: 8px 4px;
+}
+
+h1 {
+    padding: 50px;
+}
+
+p {
+    margin: 100px;
+}
+
+@media (max-width: 600px) {
+.grid {
+    width: 100%;
+    flex-direction: column;
+}
+}
+
+.orglist {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+.orglist {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.organization { 
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+.
+
+.organization h2 {
+    margin-top: 0.5rem;
+    font-size: 13px;
+}
+
+.organization h4 {
+    color: #617d98;
+    letter-spacing: 5px;
+    margin-top: 0.25rem;
+    font-size: 11px;
+}
+
+.organization p {
+    margin-top: 0.25rem;
+}
+
