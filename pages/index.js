@@ -43,7 +43,7 @@ export default function Home() {
     const [signer, setSigner] = useState(undefined);
     // Stores the value that the user inputs
     const [storedVal, setStoredVal] = useState(0);
-
+    // Stores the web3 provider
     const [provider, setProvider] = useState(undefined);
 
     // uses the window vars to see if Metamack has been installed
@@ -73,43 +73,7 @@ export default function Home() {
         }
     }
 
-    // Executes the function by storing the contractAddress and signer
-    // Gets the ABI (manually stored in the constants folder)
-    /* async function execute() {
-        if (typeof window.ethereum !== "undefined") {
-            const contractAddress =
-                "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-            const contract = new ethers.Contract(contractAddress, abi, signer);
-            try {
-                await contract.store(storedVal);
-                console.log("happening?", storedVal);
-                setExecuted(true);
-            } catch (error) {
-                console.log(error);
-            }
-        } else {
-            console.log("Please install MetaMask");
-        }
-    }
-
-    // Retrieves the stored value from the contract
-    async function showStored() {
-        if (typeof window.ethereum !== "undefined") {
-            const contractAddress =
-                "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-            const contract = new ethers.Contract(contractAddress, abi, signer);
-            try {
-                let value = await contract.retrieve();
-                value = value.toNumber();
-                console.log(value);
-            } catch (error) {
-                console.log(error);
-            }
-        } else {
-            console.log("Please install MetaMask");
-        }
-    } */
-
+    // Transfers the given amount of Ether to the selected organization
     async function execute() {
         if (typeof window.ethereum !== "undefined") {
 
@@ -127,26 +91,6 @@ export default function Home() {
                 alert("Send finished!")
               }).catch((err) => {console.log(err)})
             
-        } else {
-            console.log("Please install MetaMask");
-        }
-    }
-
-    // Retrieves the stored value from the contract
-    async function showStored() {
-        if (typeof window.ethereum !== "undefined") {
-            //const contractAddress = "0xdd2fd4581271e230360230f9337d5c0430bf44c0";
-            //const contract = new ethers.Contract(contractAddress, abi, signer);
-            const recevingAddress = 0xdd2fd4581271e230360230f9337d5c0430bf44c0;
-            try {
-                //let value = await contract.retrieve();
-                //let value = await account.;
-                //value = value.toNumber();
-                let value = 10;
-                console.log(value);
-            } catch (error) {
-                console.log(error);
-            }
         } else {
             console.log("Please install MetaMask");
         }
