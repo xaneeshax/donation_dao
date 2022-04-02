@@ -1,20 +1,13 @@
-import styles from "../styles/Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Web3Modal from "web3modal";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { abi } from "../constants/abi";
-import org from "./orgs.js";
-import dashboard from "./dashboard.js";
-import spending from "./spending.js";
 
 // Syntax to use Web3 Modal library
 let web3Modal;

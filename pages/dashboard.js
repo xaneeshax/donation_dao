@@ -9,12 +9,11 @@ import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { abi } from "../constants/abi";
-import org from "./orgs.js"
-import dashboard from "./dashboard.js"
-import spending from "./spending.js"
+import org from "./orgs.js";
+import dashboard from "./dashboard.js";
+import spending from "./spending.js";
 
 export default function Dashboard() {
-
     return (
         <div>
             <Navbar bg="dark" variant="dark">
@@ -29,5 +28,5 @@ export default function Dashboard() {
             </Navbar>
             <h1>Top Donors</h1>
         </div>
-    )
+    );
 }
