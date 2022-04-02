@@ -41,6 +41,10 @@ export default function Home() {
     const [storedVal, setStoredVal] = useState(0);
     // Stores the web3 provider
     const [provider, setProvider] = useState(undefined);
+    // Stores the Organizations from the API call
+    const [organizations, setOrganizations] = useState([]);
+    // Stores the organization that will receive funds
+    const [targetOrg, setTargetOrg] = useState(undefined);
 
     // uses the window vars to see if Metamack has been installed
     useEffect(() => {
@@ -48,6 +52,23 @@ export default function Home() {
             setHasMetamask(true);
         }
     }, [setHasMetamask]);
+
+    // Gets organizations from API
+    useEffect(() => {
+        fetch("http://ec2-54-173-89-146.compute-1.amazonaws.com:80/users")
+          .then(res => res.json())
+          .then(
+            (result) => {
+                console.log(result);
+                const orgs = result.filter(data => data.userType === "Organization");
+                console.log(orgs);
+                setOrganizations(orgs);
+            },
+            (error) => {
+                console.log(error);
+            }
+          )
+      }, [])
 
     // Connects the wallet to the site using web3Modal
     async function connect() {
@@ -74,9 +95,11 @@ export default function Home() {
         if (typeof window.ethereum !== "undefined") {
             const signerAddress = signer.getAddress();
 
+            console.log(targetOrg);
+
             const transaction = {
                 from: signerAddress,
-                to: "0xdd2fd4581271e230360230f9337d5c0430bf44c0",
+                to: targetOrg,
                 value: ethers.utils.parseEther(storedVal),
                 nonce: provider.getTransactionCount(signerAddress, "latest"),
                 gasLimit: ethers.utils.hexlify(3000000),
@@ -123,13 +146,11 @@ export default function Home() {
             {isConnected ? (
                 <Container>
                     <Form>
-                        <Form.Select aria-label="Organization Selector">
+                        <Form.Select aria-label="Organization Selector" onChange={(e) => setTargetOrg(e.target.value)}>
                             <option>
                                 Which organization would you like to donate to?
                             </option>
-                            <option value="1">Org 1</option>
-                            <option value="2">Org 2</option>
-                            <option value="3">Org 3</option>
+                            {organizations.map(org => <option key={org.ethAddress} value={org.ethAddress}>{org.userName}</option>)}
                         </Form.Select>
                         <Form.Group
                             className="mb-3"
