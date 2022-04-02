@@ -77,11 +77,13 @@ export default function Home() {
     async function execute() {
         if (typeof window.ethereum !== "undefined") {
 
+            const signerAddress = signer.getAddress();
+
             const transaction = {
-                from: signer.getAddress(),
+                from: signerAddress,
                 to: "0xdd2fd4581271e230360230f9337d5c0430bf44c0",
                 value: ethers.utils.parseEther(storedVal),
-                nonce: provider.getTransactionCount("0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199", "latest"),
+                nonce: provider.getTransactionCount(signerAddress, "latest"),
                 gasLimit: ethers.utils.hexlify(3000000),
                 gasPrice: provider.getGasPrice()
             }
