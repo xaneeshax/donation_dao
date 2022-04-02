@@ -19,11 +19,6 @@ async function main() {
   const simpleStorage = await SimpleStorageFactory.deploy()
   await simpleStorage.deployed()
 
-  const SendEtherFactory = await ethers.getContractFactory("SendEther")
-  console.log("Deploying contract...")
-  const sendEther = await SendEtherFactory.deploy()
-  await sendEther.deployed()
-
   // We only verify on a testnet!
   if (network.config.chainId === 42 && process.env.ETHERSCAN_API_KEY) {
     // 6 blocks is sort of a guess
@@ -31,7 +26,6 @@ async function main() {
     await verify(simpleStorage.address, [])
   }
   console.log("Simple Storage deployed to:", simpleStorage.address)
-  console.log("Send Ether deployed to: ", sendEther.address)
 
   // Get the current value
   let currentValue = await simpleStorage.retrieve()

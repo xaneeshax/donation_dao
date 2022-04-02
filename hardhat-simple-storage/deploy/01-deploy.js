@@ -11,23 +11,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   if (network.name != "localhost" && network.name != "hardhat") {
     blockConfirmations = 6
   }
-  /* const simpleStorage = await deploy("SimpleStorage", {
+  const simpleStorage = await deploy("SimpleStorage", {
     from: deployer,
     args: [],
     log: true,
     // we need to wait if on a live network so we can verify properly
     waitConfirmations: blockConfirmations,
   })
-  log(`SimpleStorage deployed at ${simpleStorage.address}`) */
-
-  const sendEther = await deploy("SendEther", {
-    from: deployer,
-    args: [],
-    log: true,
-    // we need to wait if on a live network so we can verify properly
-    waitConfirmations: blockConfirmations,
-  })
-  log(`SendEther deployed at ${sendEther.address}`)
+  log(`SimpleStorage deployed at ${simpleStorage.address}`)
 
   if (
     !developmentChains.includes(network.name) &&
@@ -37,4 +28,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   }
 }
 
-module.exports.tags = ["all", "sendEther"]
+module.exports.tags = ["all", "simpleStorage"]

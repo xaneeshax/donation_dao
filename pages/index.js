@@ -11,7 +11,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { abi } from "../constants/abi2";
 
 // Syntax to use Web3 Modal library
 let web3Modal;
@@ -51,7 +50,7 @@ export default function Home() {
         if (typeof window.ethereum !== "undefined") {
             setHasMetamask(true);
         }
-    });
+    }, [setHasMetamask]);
 
     // Connects the wallet to the site using web3Modal
     async function connect() {
