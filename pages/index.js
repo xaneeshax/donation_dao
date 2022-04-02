@@ -11,7 +11,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { abi } from "../constants/abi";
+import { abi } from "../constants/abi2";
 
 // Syntax to use Web3 Modal library
 let web3Modal;
@@ -44,6 +44,8 @@ export default function Home() {
     // Stores the value that the user inputs
     const [storedVal, setStoredVal] = useState(0);
 
+    const [provider, setProvider] = useState(undefined);
+
     // uses the window vars to see if Metamack has been installed
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") {
@@ -57,10 +59,12 @@ export default function Home() {
             try {
                 const web3ModalProvider = await web3Modal.connect();
                 setIsConnected(true);
-                const provider = new ethers.providers.Web3Provider(
+                const newProvider = new ethers.providers.Web3Provider(
                     web3ModalProvider
                 );
-                setSigner(provider.getSigner());
+                setProvider(newProvider);
+                setSigner(newProvider.getSigner());
+                console.log(newProvider.getSigner());
             } catch (e) {
                 console.log(e);
             }
@@ -71,7 +75,7 @@ export default function Home() {
 
     // Executes the function by storing the contractAddress and signer
     // Gets the ABI (manually stored in the constants folder)
-    async function execute() {
+    /* async function execute() {
         if (typeof window.ethereum !== "undefined") {
             const contractAddress =
                 "0x5FbDB2315678afecb367f032d93F642f64180aa3";
@@ -104,7 +108,50 @@ export default function Home() {
         } else {
             console.log("Please install MetaMask");
         }
+    } */
+
+    async function execute() {
+        if (typeof window.ethereum !== "undefined") {
+
+            const transaction = {
+                from: signer.getAddress(),
+                to: "0xdd2fd4581271e230360230f9337d5c0430bf44c0",
+                value: ethers.utils.parseEther(storedVal),
+                nonce: provider.getTransactionCount("0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199", "latest"),
+                gasLimit: ethers.utils.hexlify(3000000),
+                gasPrice: provider.getGasPrice()
+            }
+
+            signer.sendTransaction(transaction).then((transaction) => {
+                console.log(transaction)
+                alert("Send finished!")
+              }).catch((err) => {console.log(err)})
+            
+        } else {
+            console.log("Please install MetaMask");
+        }
     }
+
+    // Retrieves the stored value from the contract
+    async function showStored() {
+        if (typeof window.ethereum !== "undefined") {
+            //const contractAddress = "0xdd2fd4581271e230360230f9337d5c0430bf44c0";
+            //const contract = new ethers.Contract(contractAddress, abi, signer);
+            const recevingAddress = 0xdd2fd4581271e230360230f9337d5c0430bf44c0;
+            try {
+                //let value = await contract.retrieve();
+                //let value = await account.;
+                //value = value.toNumber();
+                let value = 10;
+                console.log(value);
+            } catch (error) {
+                console.log(error);
+            }
+        } else {
+            console.log("Please install MetaMask");
+        }
+    }
+
 
     return (
         <div>
