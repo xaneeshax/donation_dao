@@ -18,17 +18,22 @@
 
 ## Quickstart
 
-1. Clone and install dependencies
+1. Clone and enter main directory
 
 ```
 git clone https://github.com/xaneeshax/neu_lionhack
 cd neu_lionhack
+```
+
+2. Install all dependencies
+
+```
 yarn
 cd hardhat-simple-storage
 yarn
 ```
 
-2. Then, you can run:
+2. Run hardhat local node (make sure you are in the `hardhat-simple-storage` directory)
 
 ```
 yarn hardhat node
@@ -40,11 +45,15 @@ This will deploy a sample contract and start a local hardhat blockchain.
 
 In the output of the above command, take one of the private key accounts and [import it into your metamask.](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account)
 
-Additionally, add your localhost with chainid 31337 to your metamask.
+Next, Add a new Network:
+Network Name: hardhat-localhost
+New RPC URL: http://127.0.0.1:8545/
+Chain ID: 31337
+Currency Symbol: ETH
 
 4. Open the UI
 
-Then, back in your first terminal, run:
+Open a new terminal side-by-side making sure you are in the root `neu_lionhack` directory and run:
 
 ```
 yarn dev
@@ -52,7 +61,7 @@ yarn dev
 
 5. Hit buttons
 
-You'll be brought to the UI after running `yarn dev` which has exactly 2 buttons. Hit `connect` then hit `execute` and you'll send a transaction to your localhardhat.
+After running `yarn dev`, the UI is at http://localhost:3000. Hit the `Connect` button then fill out the fields and hit `Execute` and you'll send a transaction to your localhardhat.
 
 ### Important localhost note
 

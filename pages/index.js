@@ -11,6 +11,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { ethers } from "ethers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import { abi } from "../constants/abi";
+import org from "./orgs.js";
+import dashboard from "./dashboard.js";
+import spending from "./spending.js";
 
 // Syntax to use Web3 Modal library
 let web3Modal;
@@ -104,14 +108,11 @@ export default function Home() {
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-                        <Nav.Link href="#org-spending">Org Spending</Nav.Link>
-                        <Nav.Link href="#your-donations">
-                            Your Donations
-                        </Nav.Link>
+                        <Nav.Link href="orgs">Organizations</Nav.Link>
+                        <Nav.Link href="dashboard">Dashboard</Nav.Link>
+                        <Nav.Link href="spending">Org Spending</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
