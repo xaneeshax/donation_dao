@@ -24,7 +24,7 @@
 
 
 
-# Useage
+# Usage
 
 Deploy:
 
