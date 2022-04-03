@@ -39,6 +39,7 @@ export default function Dashboard() {
                         <Nav.Link href="orgs">Organizations</Nav.Link>
                         <Nav.Link href="dashboard">Dashboard</Nav.Link>
                         <Nav.Link href="spending">Org Spending</Nav.Link>
+                        <Nav.Link href="dao">Donation DAO</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

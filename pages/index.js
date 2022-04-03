@@ -143,6 +143,7 @@ export default function Home() {
             <Nav.Link href="orgs">Organizations</Nav.Link>
             <Nav.Link href="dashboard">Top Donors</Nav.Link>
             <Nav.Link href="spending">Org Spending</Nav.Link>
+            <Nav.Link href="dao">Donation DAO</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
