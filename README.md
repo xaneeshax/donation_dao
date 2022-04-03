@@ -27,7 +27,7 @@ Features that are Partly implemented
 - A UI to interact with the Governance contracts
 
 
-## DonationDAO
+## DonationDAO Video Demo
 
 Link: 
 
