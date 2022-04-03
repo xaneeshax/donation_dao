@@ -1,6 +1,8 @@
 # DonationDAO
 
-# Motivation: Using crypto to donate to international organizations as seen with Ukraine the past few weeks has become very relevant. 
+# Motivation: 
+
+Using crypto to donate to international organizations as seen with Ukraine the past few weeks has become very relevant. 
 
 # Current Problems Include:
     - Making sure the address belongs to an actual foundation
