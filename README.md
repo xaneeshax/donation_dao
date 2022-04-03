@@ -27,9 +27,10 @@ Features that are Partly implemented
 - A UI to interact with the Governance contracts
 
 
-## DonationDAO Video Demo
+## DonationDAO Video Demo + Slide Deck
 
 Link: https://drive.google.com/drive/folders/1xNKaiUIJ7gLQjknWv1A3JOeAH4b-J_d6?usp=sharing
+Slide Deck: https://docs.google.com/presentation/d/1ea66jFm68aV3yY3-8wBQg_ij9dbMQMp63Cdan0JhG2k/edit?usp=sharing
 
     
 
