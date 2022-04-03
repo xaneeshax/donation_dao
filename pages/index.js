@@ -56,18 +56,20 @@ export default function Home() {
     // Gets organizations from API
     useEffect(() => {
         fetch("http://ec2-54-173-89-146.compute-1.amazonaws.com:80/users")
-          .then(res => res.json())
-          .then(
-            (result) => {
-                const orgs = result.filter(data => data.userType === "Organization");
-                console.log(orgs);
-                setOrganizations(orgs);
-            },
-            (error) => {
-                console.log(error);
-            }
-          )
-      }, [])
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    const orgs = result.filter(
+                        (data) => data.userType === "Organization"
+                    );
+                    console.log(orgs);
+                    setOrganizations(orgs);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+    }, []);
 
     // Connects the wallet to the site using web3Modal
     async function connect() {
@@ -136,10 +138,20 @@ export default function Home() {
                     ) : (
                         <div>
                             <div className="container-connect">
-                                <h1 id="welcome-title">Welcome to DonationDAO</h1>
-                                <p id="welcome-caption">Platform for Secure and Verified Crypto Donations</p>
+                                <h1 id="welcome-title">
+                                    Welcome to DonationDAO
+                                </h1>
+                                <p id="welcome-caption">
+                                    Platform for Secure and Verified Crypto
+                                    Donations
+                                </p>
                             </div>
-                            <Button id="connect-button" onClick={() => connect()}>Connect</Button>
+                            <Button
+                                id="connect-button"
+                                onClick={() => connect()}
+                            >
+                                Connect
+                            </Button>
                         </div>
                     )}
                 </Container>
@@ -149,13 +161,21 @@ export default function Home() {
             {isConnected ? (
                 <Container>
                     <Form>
-                        <Form.Select aria-label="Organization Selector">
+                        <Form.Select
+                            aria-label="Organization Selector"
+                            onChange={(e) => setTargetOrg(e.target.value)}
+                        >
                             <option>
                                 Which organization would you like to donate to?
                             </option>
-                            <option value="1">Org 1</option>
-                            <option value="2">Org 2</option>
-                            <option value="3">Org 3</option>
+                            {organizations.map((org) => (
+                                <option
+                                    key={org.ethAddress}
+                                    value={org.ethAddress}
+                                >
+                                    {org.userName}
+                                </option>
+                            ))}
                         </Form.Select>
                         <Form.Group
                             className="mb-3"
@@ -170,7 +190,9 @@ export default function Home() {
                                 onChange={(e) => setStoredVal(e.target.value)}
                             />
                         </Form.Group>
-                        <Button id="execute-button" onClick={() => execute()}>Execute</Button>
+                        <Button id="execute-button" onClick={() => execute()}>
+                            Execute
+                        </Button>
                         {executed ? (
                             <Button onClick={() => showStored()}>
                                 My Value
