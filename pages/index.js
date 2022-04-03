@@ -59,7 +59,6 @@ export default function Home() {
           .then(res => res.json())
           .then(
             (result) => {
-                console.log(result);
                 const orgs = result.filter(data => data.userType === "Organization");
                 console.log(orgs);
                 setOrganizations(orgs);
