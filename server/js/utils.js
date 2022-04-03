@@ -46,7 +46,12 @@ module.exports.getEthScanTx = async(req, res) => {
 
 module.exports.topDonors = async(req, res) => {
 
-  sql_query = `Select fromEthAddress, sum(ethDonated) as total_donations from transactions Group BY fromEthAddress; `
+  sql_query = `Select t.fromEthAddress, u.userName ,sum(t.ethDonated) as total_donations 
+	from transactions t 
+    left join users u 
+		on
+			t.fromEthAddress = u.ethAddress
+Group BY t.fromEthAddress; `;
   console.log(`Query : ${sql_query}`);
   connection.query(sql_query, function (error, results, fields) {
     if (error) throw error;
