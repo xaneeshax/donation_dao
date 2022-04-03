@@ -95,8 +95,6 @@ export default function Home() {
         if (typeof window.ethereum !== "undefined") {
             const signerAddress = signer.getAddress();
 
-            console.log(targetOrg);
-
             const transaction = {
                 from: signerAddress,
                 to: targetOrg,
