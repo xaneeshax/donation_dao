@@ -13,7 +13,7 @@ Using crypto to donate to international organizations as seen with Ukraine the p
     
 # Solution
 
-DonationDAO is a platform that provides verified and reliable donations to approved orgnizations. All organizations will be approved by tokenholders of the DD (DonationDAO). DD tokens are given every month to the most consistent donors that use the platform.
+DonationDAO is a platform that provides verified and reliable donations to approved organizations. All organizations will be approved by tokenholders of the DD (DonationDAO). DD tokens are given every month to the most consistent donors that use the platform.
 
 Our platform has the following features
 - Can transfer funds between a donor and an approved organization
