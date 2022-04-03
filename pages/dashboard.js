@@ -37,7 +37,7 @@ export default function Dashboard() {
                     <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="orgs">Organizations</Nav.Link>
-                        <Nav.Link href="dashboard">Dashboard</Nav.Link>
+                        <Nav.Link href="dashboard">Top Donors</Nav.Link>
                         <Nav.Link href="spending">Org Spending</Nav.Link>
                         <Nav.Link href="dao">Donation DAO</Nav.Link>
                     </Nav>
