@@ -119,13 +119,13 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className="homescreen">
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="orgs">Organizations</Nav.Link>
-                        <Nav.Link href="dashboard">Dashboard</Nav.Link>
+                        <Nav.Link href="dashboard">Top Donors</Nav.Link>
                         <Nav.Link href="spending">Org Spending</Nav.Link>
                     </Nav>
                 </Container>
@@ -133,9 +133,15 @@ export default function Home() {
             {hasMetamask ? (
                 <Container>
                     {isConnected ? (
-                        <p>Connected!</p>
+                        <p></p>
                     ) : (
-                        <Button onClick={() => connect()}>Connect</Button>
+                        <div>
+                            <div className="container-connect">
+                                <h1 id="welcome-title">Welcome to DonationDAO</h1>
+                                <p id="welcome-caption">Platform for Secure and Verified Crypto Donations</p>
+                            </div>
+                            <Button id="connect-button" onClick={() => connect()}>Connect</Button>
+                        </div>
                     )}
                 </Container>
             ) : (
@@ -144,11 +150,13 @@ export default function Home() {
             {isConnected ? (
                 <Container>
                     <Form>
-                        <Form.Select aria-label="Organization Selector" onChange={(e) => setTargetOrg(e.target.value)}>
+                        <Form.Select aria-label="Organization Selector">
                             <option>
                                 Which organization would you like to donate to?
                             </option>
-                            {organizations.map(org => <option key={org.ethAddress} value={org.ethAddress}>{org.userName}</option>)}
+                            <option value="1">Org 1</option>
+                            <option value="2">Org 2</option>
+                            <option value="3">Org 3</option>
                         </Form.Select>
                         <Form.Group
                             className="mb-3"
@@ -163,7 +171,7 @@ export default function Home() {
                                 onChange={(e) => setStoredVal(e.target.value)}
                             />
                         </Form.Group>
-                        <Button onClick={() => execute()}>Execute</Button>
+                        <Button id="execute-button" onClick={() => execute()}>Execute</Button>
                         {executed ? (
                             <Button onClick={() => showStored()}>
                                 My Value
