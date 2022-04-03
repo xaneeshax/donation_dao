@@ -1,6 +1,37 @@
-# nextjs-ethers-metamask-connect
+# DonationDAO
 
-## Requirements
+# Motivation: Using crypto to donate to international organizations as seen with Ukraine the past few weeks has become very relevant. 
+
+# Current Problems Include:
+    - Making sure the address belongs to an actual foundation
+    - Prone to scams
+    - Difficult to track the crypto dealings of a non-profit 
+    - Donors want to ensure that donations are being spent to actually support the cause
+    
+    
+# Solution
+
+DonationDAO is a platform that provides verified and reliable donations to approved orgnizations. All organizations will be approved by tokenholders of the DD (DonationDAO) token. DD tokens are given every month to the most consistent donors that use the platform.
+
+Our platform has the following features
+- Can transfer funds between a donor and an approved organization
+- Offers analytics regarding the top donors on the platform
+- Lists the organizations that have been approved by DonationDAO
+- DAO contracts for the token and the governance
+- Backend to support all data analytics and donors on the platform
+
+Features that are Partly implemented
+- A sankey visual to track how each orgnaization is spending their money
+- A UI to interact with the Governance contracts
+
+
+## DonationDAO
+
+Link: 
+
+    
+
+## Requirements to Run
 
 -   [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
     -   You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
@@ -16,7 +47,7 @@
 -   [Metamask](https://metamask.io/)
     -   This is a browser extension that lets you interact with the blockchain.
 
-## Quickstart
+## Steps to Run
 
 1. Clone and enter main directory
 
